@@ -172,19 +172,25 @@ anomalies for the variable the proxy is sensitive to
 if p.dataset == 'vcsn':
     if verbose:
         save_progress(opath, 'VCSN', 15)
-    if p.variable == 'Rain':
-        vcsn = analogs(p, 'vcsn', 'Rain').composite()
-        f = scalar_plot(vcsn, test=0.1, proj='cyl', res='h').plot(subplots=False)
-        f.savefig(os.path.join(opath,'VCSN_rain_proxy.png'))
-        images.append({'id': 'vcsn_rain', 'title' : 'VCSN seasonal rainfall', 'filename': 'VCSN_rain_proxy.png'})
-        plt.close(f)
+    # if p.variable == 'Rain':
+    vcsn = analogs(p, 'vcsn', 'Rain').composite()
+    f = scalar_plot(vcsn, test=0.1, proj='cyl', res='h').plot(subplots=False)
+    f.savefig(os.path.join(opath,'VCSN_rain_proxy.png'))
+    images.append({'id': 'vcsn_rain', 'title' : 'VCSN seasonal rainfall', 'filename': 'VCSN_rain_proxy.png'})
+    plt.close(f)
 
-    if p.variable == 'TMean':
-        vcsn = analogs(p, 'vcsn', 'TMean').composite()
-        f = scalar_plot(vcsn, test=0.1, proj='cyl', res='h', vmin=-1.5, vmax=1.5).plot(subplots=False)
-        f.savefig(os.path.join(opath,'VCSN_tmean_proxy.png'))
-        images.append({'id': 'vcsn_tmean', 'title' : 'VCSN seasonal Temperatures', 'filename': 'VCSN_tmean_proxy.png'})
-        plt.close(f)
+    # if p.variable == 'TMean':
+    vcsn = analogs(p, 'vcsn', 'TMean').composite()
+    f = scalar_plot(vcsn, test=0.1, proj='cyl', res='h', vmin=-1.5, vmax=1.5).plot(subplots=False)
+    f.savefig(os.path.join(opath,'VCSN_tmean_proxy.png'))
+    images.append({'id': 'vcsn_tmean', 'title' : 'VCSN seasonal Temperatures', 'filename': 'VCSN_tmean_proxy.png'})
+    plt.close(f)
+
+    vcsn = analogs(p, 'vcsn', 'Vapour_Pressure').composite()
+    f = scalar_plot(vcsn, test=0.1, proj='cyl', res='h', vmin=-3, vmax=3).plot(subplots=False)
+    f.savefig(os.path.join(opath, 'VCSN_VP_proxy.png'))
+    images.append({'id': 'vcsn_VP', 'title': 'VCSN seasonal Vapour Pressure', 'filename': 'VCSN_VP_proxy.png'})
+    plt.close(f)
 
 
 # ==============================================================================
