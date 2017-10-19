@@ -161,7 +161,6 @@ class proxy:
     qualitative=0, period="1979-2014", climatology="1981-2010", \
     calc_anoms=1, detrend=1, method='closest 8'):
 
-        super(proxy, self).__init__()
         if lon < 0:
             lon += 360.
         self.description = 'proxy'

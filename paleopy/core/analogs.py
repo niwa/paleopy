@@ -15,7 +15,6 @@ class analogs:
     takes either a `proxy` or `ensemble` instance
     """
     def __init__(self, obj, dataset, variable):
-        super(analogs, self).__init__()
         # the parent can be either an instance of a `proxy` or `ensemble` class
         self.parent = obj
         # the dataset to read from

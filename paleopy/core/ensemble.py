@@ -41,7 +41,6 @@ class ensemble:
 
     """
     def __init__(self, djsons='../jsons', pjsons='../jsons/proxies', season='DJF'):
-        super(ensemble, self).__init__()
         # type
         self.description = 'ensemble'
         # `jsons` is the path to the individual proxies JSON files
