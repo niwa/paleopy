@@ -2,7 +2,7 @@ import os
 import numpy as np
 from numpy import ma
 import json
-import xray
+import xarray as xray
 import bottleneck  as bn
 from matplotlib.mlab import detrend_linear
 from scipy.stats import ttest_ind
