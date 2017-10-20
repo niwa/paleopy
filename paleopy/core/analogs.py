@@ -154,11 +154,11 @@ class analogs:
         if repeats:
             # extract the composite sample: it INCLUDES the repeated years
             compos_s = xray.concat([self.dset['seas_var'].sel(dates=str(y)) for y in self.analog_years], dim='dates')
-            ayears = self.analog_years
+            ayears = self.analog_years.values
         else:
             # extract the composite sample EXCLUDING the repeated years
             compos_s = xray.concat([self.dset['seas_var'].sel(dates=str(y)) for y in np.unique(self.analog_years)], dim='dates')
-            ayears = np.unique(self.analog_years)
+            ayears = np.unique(self.analog_years.values)
 
 
         # calculating the climatology
