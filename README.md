@@ -147,3 +147,15 @@ illustrates the reconstruction of anomalies for
 a set of climate indices (currently the SOI, NINO 3.4 SSTs, the SAM index and the IOD index)
 
 hi there 
+
+
+## Docker
+Create the new docker with:
+```
+docker build -t niwa/paleopy
+```
+
+Run and then remove the created docker with:
+```
+docker run  -v [ABSOLUTE PATH TO THE REPOSITORY]:/code -v [ABSOLUTE PATH TO THE DATASETS FOLDER]:/data --name paleopy niwa/paleopy && docker rm paleopy
+```
