@@ -14,10 +14,6 @@ WORKDIR /tmp
 RUN conda create --name paleopy --file requirements.txt && \
     /bin/bash -c 'source activate paleopy && pip install palettable'
 
-#RUN [ "conda", "create", "--name", "paleopy", "--file", "requirements.txt" ]
-#
-#RUN [ "/bin/bash", "-c", "source activate paleopy && pip install palettable" ]
-
 ADD . /code
 WORKDIR /code
 #CMD [ "/bin/bash", "-c", "source activate paleopy && python setup.py install" ]
